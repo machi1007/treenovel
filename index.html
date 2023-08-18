@@ -88,6 +88,8 @@ function loadNovel() {
         iframe.src = 'novel1.html';
     } else if (selectedNovel === 'novel2') {
         iframe.src = 'novel2.html';
+    } else if (selectedNovel === 'novel3') {
+        iframe.src = 'novel3.html';
     }
     iframe.style.display = "block";
 }
@@ -104,6 +106,7 @@ function loadNovel() {
       <select id="novel-selector">
         <option value="novel1">《天元之道》-大樹</option>
         <option value="novel2">《逆天魔尊》-大樹</option>
+        <option value="novel3">《雲飄雪》-大樹</option>
         <!-- 可以添加更多選項 -->
       </select>
       <button onclick="loadNovel()">開始閱讀</button>
