@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大樹小說網</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      margin-top: 20px;
+    }
+
+    main {
+      margin-top: 30px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    #novel-selector {
+      padding: 5px;
+    }
+
+    #read-button {
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #read-button:hover {
+      background-color: #0056b3;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #novel-content {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    #novel-title {
+      margin-top: 0;
+      color: #007bff;
+    }
+
+    #novel-author {
+      color: #666;
+    }
+
+    #novel-story {
+      text-align: left;
+      margin-top: 10px;
+    }
+
+    /* 自訂的 iframe 樣式 */
+    #novel-iframe {
+      width: 80%; /* 調整 iframe 寬度 */
+      height: 600px; /* 調整 iframe 高度 */
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+
+  <script>
+
+function loadNovel() {
+    const iframe = document.getElementById("novel-iframe");
+    const novelSelector = document.getElementById("novel-selector");
+    const selectedNovel = novelSelector.value;
+    if (selectedNovel === 'novel1') {
+        iframe.src = 'novel1.html';
+    } else if (selectedNovel === 'novel2') {
+        iframe.src = 'novel2.html';
+    }
+    iframe.style.display = "block";
+}
+
+  </script>
+</head>
+
+
+<body>
+  <h1>歡迎來到大樹小說網</h1>
+  <main>
+    <section>
+      <label for="novel-selector">選擇一個小說：</label>
+      <select id="novel-selector">
+        <option value="novel1">《天元之道》-大樹</option>
+        <option value="novel2">《逆天魔尊》-大樹</option>
+        <!-- 可以添加更多選項 -->
+      </select>
+      <button onclick="loadNovel()">開始閱讀</button>
+    </section>
+    <iframe id="novel-iframe" src="" width="100%" height="600" style="display: none;"></iframe>
+  </main>
+</body>
+</html>
