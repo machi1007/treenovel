@@ -42,33 +42,6 @@
       background-color: #0056b3;
     }
 
-    .hidden {
-      display: none;
-    }
-
-    #novel-content {
-      margin-top: 20px;
-      padding: 20px;
-      background-color: white;
-      border-radius: 5px;
-      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-    }
-
-    #novel-title {
-      margin-top: 0;
-      color: #007bff;
-    }
-
-    #novel-author {
-      color: #666;
-    }
-
-    #novel-story {
-      text-align: left;
-      margin-top: 10px;
-    }
-
-    /* 自訂的 iframe 樣式 */
     #novel-iframe {
       width: 80%; /* 調整 iframe 寬度 */
       height: 600px; /* 調整 iframe 高度 */
@@ -77,47 +50,31 @@
       box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
     }
   </style>
-
-  <script>
-
-function loadNovel() {
-    const iframe = document.getElementById("novel-iframe");
-    const novelSelector = document.getElementById("novel-selector");
-    const selectedNovel = novelSelector.value;
-    if (selectedNovel === 'novel1') {
-        iframe.src = 'novel1.html';
-    } else if (selectedNovel === 'novel2') {
-        iframe.src = 'novel2.html';
-    } else if (selectedNovel === 'novel3') {
-        iframe.src = 'novel3.html';
-    } else if (selectedNovel === 'novel4') {
-        iframe.src = 'novel4.html';
-    } else if (selectedNovel === 'novel5') {
-        iframe.src = 'novel5.html';
-    }
-    iframe.style.display = "block";
-}
-
-  </script>
 </head>
-
-
-<body>
+<body onload="loadNovel()">
   <h1>歡迎來到大樹小說網</h1>
   <main>
     <section>
       <label for="novel-selector">選擇一個小說：</label>
       <select id="novel-selector">
-        <option value="novel1">《天元之道》-大樹</option>
-        <option value="novel2">《逆天魔尊》-大樹</option>
-        <option value="novel3">《雲飄雪》-大樹</option>
-        <option value="novel4">《自由之地的守護者：光明與陰影的對立》-6114探險團</option>
-        <option value="novel5">《武林守護者：自由之劍的傳說》-6114探險團</option>
+        <option value="https://docs.google.com/document/d/e/2PACX-1vRbMrdnxSMbjljRwgJLFAVR9WbQrgANEKJjQzB9w_Gep6gZ2QbWvu-GKMNJE02fZkRPPT-jSHdiZ5iZ/pub" selected>《時空列島的危機：大樹的使命》-6114(第一組)</option>
+        <option value="https://docs.google.com/document/d/e/2PACX-1vTYJh_gTEK-djEhW548iaVIpK6uB7WrCOW5sIMUwWhjO-dZmEw-Imm_4fqRljafO5q1NWi4VW96UbWx/pub">☆大樹傳說​☆-6114(第二組)</option>
+        <option value="https://docs.google.com/document/d/e/2PACX-1vRLtL1fVevsv8dID9-52lJVL6p-mb-BuyT6a6jb8crBg1LJqDVO1CXY-TEGYKkjzxhhMBfCGeu07TrS/pub">《古老之樹​的秘密》-6114(第三組)</option>
+        <option value="https://docs.google.com/document/d/e/2PACX-1vTGAF9I0TAHVreK7UmnccWugNOW0f5Y2VUb1VLiwCMZMXStSI3fags0Uq-RfmZQl7nqCGKgZvnCKaUK/pub">《大樹世界》-6114(第四組)</option>
         <!-- 可以添加更多選項 -->
       </select>
       <button onclick="loadNovel()">開始閱讀</button>
     </section>
-    <iframe id="novel-iframe" src="" width="100%" height="600" style="display: none;"></iframe>
+    <iframe id="novel-iframe" style="display: none;"></iframe>
   </main>
+
+  <script>
+    function loadNovel() {
+      const iframe = document.getElementById("novel-iframe");
+      const novelSelector = document.getElementById("novel-selector");
+      iframe.src = novelSelector.value;
+      iframe.style.display = "block";
+    }
+  </script>
 </body>
 </html>
